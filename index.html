@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./calc.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>JavaScript Calculadora de Empréstimo</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Insira os dados do empréstimo:</th>
+        <td></td>
+        <th>Saldo do empréstimo, patrimônio líquido acumulado e pagamentos de juros</th>
+      </tr>
+      <tr>
+        <td>Valor do Empréstimo(R$):</td>
+        <td><input id="amount" onchange="calculate();" /></td>
+        <td rowspan="8">
+          <canvas id="graph" width="400" height="250"></canvas>
+        </td>
+      </tr>
+      <tr>
+        <td>Juros anuais (%):</td>
+        <td><input id="apr" onchange="calculate();" /></td>
+      </tr>
+      <tr>
+        <td>Período de reembolso (anos):</td>
+        <td><input id="years" onchange="calculate();" /></td>
+      </tr>
+      <tr>
+        <td>Zipcode (para encontrar credores):</td>
+        <td><input id="zipcode" onchange="calculate();" /></td>
+      </tr>
+      <tr>
+        <th>Pagamentos Aproximados:</th>
+        <td><button onclick="calculate()" ;>Calcule</button></td>
+      </tr>
+      <tr>
+        <td>Pagamento mensal:</td>
+        <td>R$<span class="output" id="payment"></span></td>
+      </tr>
+      <tr>
+        <td>Pagamento total:</td>
+        <td>R$<span class="output" id="total"></span></td>
+      </tr>
+      <tr>
+        <td>Juros totais:</td>
+        <td>R$<span class="output" id="totalinterest"></span></td>
+      </tr>
+      <tr>
+        <th>Patrocinadores:</th>
+        <td coldspan="2">
+            Solicite seu empréstimo com um desses credores:
+          <div id="lenders"></div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
